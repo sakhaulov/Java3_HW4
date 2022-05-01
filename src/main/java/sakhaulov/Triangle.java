@@ -23,17 +23,18 @@ public class Triangle {
     private void checkSides(double a, double b, double c)
             throws NotTriangleException, NegativeSideValueException, ZeroSideException {
 
-        if (a + b < c || a + c < b || b + c < a) {
-            throw new NotTriangleException();
+        if (a == 0 || b == 0 || c == 0) {
+            throw new ZeroSideException();
         }
 
         if (a < 0 || b < 0 || c < 0) {
             throw new NegativeSideValueException();
         }
 
-        if (a == 0 || b == 0 || c == 0) {
-            throw new ZeroSideException();
+        if (a + b < c || a + c < b || b + c < a) {
+            throw new NotTriangleException();
         }
+        
     }
 
 
